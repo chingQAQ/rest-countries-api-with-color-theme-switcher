@@ -43,10 +43,10 @@ CardsList.propTypes = {
 };
 
 CardsListItem.propTypes = {
-    flags: PropTypes.object.isRequired,
-    name: PropTypes.string.isRequired,
-    population: PropTypes.number.isRequired,
-    region: PropTypes.string.isRequired,
+    flags: PropTypes.object,
+    name: PropTypes.string,
+    population: PropTypes.number,
+    region: PropTypes.string,
     capital: PropTypes.string
 };
 
