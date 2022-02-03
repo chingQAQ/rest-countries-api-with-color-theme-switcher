@@ -1,4 +1,4 @@
-import React, { } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { nanoid } from 'nanoid';
 import { Data } from '@/components';
@@ -24,7 +24,7 @@ export function Country ({
                 />
             </div>
             <div className="p-4 pb-8 space-y-1 box-border">
-                <p className="text-white font-bold text-sm">{name}</p>
+                <p className="text-dark-blue dark:text-white font-bold text-sm">{name}</p>
                 {
                     Object.entries({
                         Population: Format.number(population),

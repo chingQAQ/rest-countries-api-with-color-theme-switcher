@@ -17,7 +17,7 @@ export function Search ({ className, onChange }) {
                     className={clsx(
                         'flex-auto min-w-0',
                         'bg-transparent text-slate-400',
-                        'rounded-none'
+                        'rounded-none outline-none'
                     )}
                     placeholder='Search for a country...'
                     onChange={({target}) => onChange(target.value)}

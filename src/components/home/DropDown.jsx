@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { Card } from '@/components';
 import clsx from 'clsx';
 import { nanoid } from 'nanoid';
-import { upperCaseChar, capitalStr } from '@/utils';
 
 const PLACEHOLDER = 'Filter by Region...';
 
@@ -15,7 +14,7 @@ const getCurrentRegion = (currentRegion) => {
         regionName = currentRegion;
     }
 
-    return capitalStr(regionName, upperCaseChar);
+    return regionName;
 };
 
 export function DropDownOption({
@@ -32,7 +31,7 @@ export function DropDownOption({
                         className="text-sm dark:hover:text-slate-100"
                         onClick={() => onDropDownOptionClick(region)}
                     >
-                        {capitalStr(region, upperCaseChar)}
+                        {region}
                     </div>
                 ))
             }
@@ -44,7 +43,7 @@ export function DropDown({ current, setFilter, options }) {
     const [close, setClose] = useState(true);
 
     const dropDownOptionClickHandler = useCallback((region) => setFilter(() => {
-        return region === 'all' ? '' : region;
+        return region.match(new RegExp('^all', 'i')) ? '' : region;
     }), []);
 
     return (
@@ -58,7 +57,7 @@ export function DropDown({ current, setFilter, options }) {
             )}
             onClick={() => setClose(p => !p)}
         >
-            <div className="text-sm dark:hover:text-slate-100">{getCurrentRegion(current)}</div>
+            <div className="text-sm text-slate-400 dark:hover:text-slate-100">{getCurrentRegion(current)}</div>
             <Card>
                 <DropDownOption
                     className={clsx(

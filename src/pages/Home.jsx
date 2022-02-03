@@ -3,7 +3,7 @@ import { useStore } from '@/store';
 import { Card, Country, Loading, Search, DropDown } from '@/components';
 import { nanoid } from 'nanoid';
 
-const REGION = ['all', 'africa', 'americas', 'asia', 'europe', 'oceania'];
+const REGION = ['All', 'Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
 
 export function Home() {
 
@@ -15,8 +15,8 @@ export function Home() {
 
     const countries = useMemo(() => 
         data
-            .filter(({ name }) => name.match(RegExp(`^${search}`, 'i')))
-            .filter(({ region }) => region.match(RegExp(`^${filter}`, 'i')))
+            .filter(({ name }) => name.match(new RegExp(`^${search}`, 'i')))
+            .filter(({ region }) => region.match(new RegExp(`^${filter}`, 'i')))
         ,
         [filter, search, data]
     );
@@ -36,7 +36,7 @@ export function Home() {
             { isError && <div> Error: { data } </div> }
             {
                 <div className="max-h-[65vh] overflow-auto mt-10">
-                    <ul className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <ul className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-1 pb-10">
                         {
                             countries.map((country, idx) => (
                                 <Card key={nanoid(idx)}>

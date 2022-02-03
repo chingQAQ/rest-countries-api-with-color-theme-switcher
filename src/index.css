@@ -5,6 +5,7 @@
 @layer base {
     html,
     body {
+        font-family: 'Noto Sans', sans-serif;
         @apply bg-very-light-gray dark:bg-very-dark-blue;
         @apply text-very-dark-blue dark:text-white;
     }

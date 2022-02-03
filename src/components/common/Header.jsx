@@ -28,7 +28,7 @@ export function Header () {
             'flex items-center justify-between box-border',
             'bg-white dark:bg-dark-blue shadow-md'
         )}>
-            <h1 className="text-very-dark-blue dark:text-white text-3xl font-medium">Where in the world?</h1>
+            <h1 className="text-very-dark-blue dark:text-white text-3xl font-bold">Where in the world?</h1>
             <ThemeToggle/>
         </header>
     );
