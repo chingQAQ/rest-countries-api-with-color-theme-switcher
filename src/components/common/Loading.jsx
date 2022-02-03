@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { upperCaseChar, capitalStr } from '@/utils';
 
-function Loading({ name }) {
+export function Loading({ name }) {
 
-    const reason = capitalStr(name, upperCaseChar);
+    const why = capitalStr(name, upperCaseChar);
 
     return (
         <div className="pt-10">
-            <p className="text-sm text-slate-100">{ reason } Loading...</p>
+            <p className="text-sm">{ why } Loading...</p>
         </div>
     );
 }
