@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useStore } from '@/store';
 import { useParams } from 'react-router-dom';
 import { List, BackButton } from '@/components';
+import { Link } from 'react-router-dom';
 
 export function Detail() {
 
@@ -26,7 +27,10 @@ export function Detail() {
 
     return (
         <>
-            <BackButton to="/"/>
+            <BackButton>
+                <Link to="/">Back</Link>
+            </BackButton>
+            
             { country && <List {...country}/> }
         </>
     );

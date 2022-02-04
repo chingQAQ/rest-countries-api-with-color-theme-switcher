@@ -1,7 +1,6 @@
 import React, { isValidElement, cloneElement } from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
-import { Link } from 'react-router-dom';
 
 export function Button({ className, children }) {
 
@@ -14,10 +13,13 @@ export function Button({ className, children }) {
     );
 }
 
-export function BackButton ({className, to, children = 'Back'}) {
-    return cloneElement(<Link />,
-        { className: clsx('btn', className), to }
-    , children);
+export function BackButton ({className, children}) {
+    return cloneElement(children,
+        { 
+            className: clsx('btn', className, children.props.className,),
+            ...children.props
+        }
+    );
 }
 
 Button.propTypes = {
@@ -31,7 +33,6 @@ Button.propTypes = {
 
 BackButton.propTypes = {
     className: PropTypes.string,
-    to: PropTypes.string,
     children: PropTypes.element
 };
 
