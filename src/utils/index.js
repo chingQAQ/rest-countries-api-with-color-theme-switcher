@@ -4,11 +4,11 @@ export const capitalStr = (string, convert) => string.replace(/^\w/, convert);
 
 export const join = sign => value => value.join(`${sign}`);
 
-const arrayToString = join(', ');
+const format = join(', ');
 
 export const Format = {
     number: (value) => new Intl.NumberFormat().format(value),
-    array: (value) => Array.isArray(value) && arrayToString(value),
+    array: (value) => Array.isArray(value) && format(value),
     object: (value, concatKeyName) => {
         let heap = [];
 
@@ -18,7 +18,6 @@ export const Format = {
             }
         }
 
-
-        return arrayToString(heap);
+        return format(heap);
     }
 };

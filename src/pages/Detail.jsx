@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useStore } from '@/store';
 import { useParams } from 'react-router-dom';
-import { List } from '@/components';
+import { List, BackButton } from '@/components';
 
 export function Detail() {
 
@@ -26,6 +26,7 @@ export function Detail() {
 
     return (
         <>
+            <BackButton to="/"/>
             { country && <List {...country}/> }
         </>
     );

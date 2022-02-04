@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 export function Card({ className, children }) {
 
-    if (!isValidElement) return <>{children}</>;
+    if (!isValidElement(children)) return <>{children}</>;
 
     return cloneElement(children, {
         ...children.props,

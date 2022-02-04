@@ -1,6 +1,9 @@
 import axios from 'axios';
+import { join } from '@/utils';
 
 const BASE_URL = 'https://restcountries.com/v2';
+
+const format = join(',');
 
 const setEndpoint = (url = null, ...path) => `${url}/${path.join('/')}`;
 
@@ -10,27 +13,20 @@ const fetchCountiesData = async ({ queryKey }) => {
 
     let endpoint = setEndpoint(BASE_URL, service);
 
-    let condition = null;
-
-    if (Array.isArray(fields)) {
-        condition = '?fields=' + fields.join(',');
-    } else {
-        condition = `/${fields}`;
-    }
-
-    endpoint = endpoint + condition;
-
     try {
         const api = new URL(endpoint);
+
+        const params = new URLSearchParams();
+
+        if (Array.isArray(fields)) {
+            params.append('fields', format(fields));
+            api.search = params.toString();
+        }
 
         const res = await axios.get(api);
 
         return res.data;
-    } catch (err) {
-        console.log(err);
-
-        return [];
-    }
+    } catch (err) { return []; }
 };
 
 const getCountryByName = async (name) => {
@@ -43,12 +39,7 @@ const getCountryByName = async (name) => {
         const res = await axios.get(api);
 
         return res.data;
-    } catch (err) {
-        console.log(err);
-
-        return [];
-    }
-
+    } catch (err) { return []; }
 };
 
 export default {

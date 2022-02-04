@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { Data } from '@/components';
 import { nanoid } from 'nanoid';
 import { Format } from '@/utils';
-import { Link } from 'react-router-dom';
 
 export function List({
     flags,
@@ -19,7 +18,6 @@ export function List({
 }) {
     return (
         <>
-            <Link to='/'>back</Link>
             <img
                 // className="w-full h-full object-cover"
                 src={flags?.png}

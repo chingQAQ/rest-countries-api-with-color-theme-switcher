@@ -18,7 +18,6 @@ const FIELDS = [
 ];
 
 export function useStore() {
-
     const { isLoading, isSuccess, isError, error, data } = useQuery(
         ['countriesData', SERVICE, FIELDS],
         API.fetchCountiesData,
@@ -26,7 +25,6 @@ export function useStore() {
     );
 
     const store = useMemo(() => {
-
         const ret = isError ? error.message : data;
 
         return ret || [];
