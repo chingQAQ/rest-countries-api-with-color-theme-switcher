@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { useQuery } from 'react-query';
-import { fetchCountiesData } from '@/apis';
+import API from '@/apis';
 
 const SERVICE = 'all'; 
 
@@ -9,14 +9,19 @@ const FIELDS = [
     'name',
     'population',
     'region',
-    'capital'
+    'capital',
+    'nativeName',
+    'languages',
+    'topLevelDomain',
+    'subregion',
+    'currencies'
 ];
 
 export function useStore() {
 
     const { isLoading, isSuccess, isError, error, data } = useQuery(
         ['countriesData', SERVICE, FIELDS],
-        fetchCountiesData,
+        API.fetchCountiesData,
         { staleTime: 5 * 60 * 1000 }
     );
 
@@ -24,16 +29,24 @@ export function useStore() {
 
         const ret = isError ? error.message : data;
 
-        return {
-            isLoading,
-            isSuccess,
-            isError,
-            data: ret || []
-        };
+        return ret || [];
 
     }, [isLoading, isSuccess]);
     
-    return store;
+    return {
+        getDataState: () => ({
+            isLoading,
+            isSuccess,
+            isError,   
+        }),
+        getAllCountriesData: () => store,
+        getCountryByName: async (name) => {
+
+            const memoryCountry = store.find(i => i.name === name);
+
+            return memoryCountry || await API.getCountryByName(name).then(r => r[0]);
+        }
+    };
 }
 
 export default useStore;

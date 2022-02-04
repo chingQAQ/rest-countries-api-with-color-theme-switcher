@@ -2,6 +2,23 @@ export const upperCaseChar = (char) => char.toUpperCase();
 
 export const capitalStr = (string, convert) => string.replace(/^\w/, convert);
 
+export const join = sign => value => value.join(`${sign}`);
+
+const arrayToString = join(', ');
+
 export const Format = {
-    number: (value) => new Intl.NumberFormat().format(value)
+    number: (value) => new Intl.NumberFormat().format(value),
+    array: (value) => Array.isArray(value) && arrayToString(value),
+    object: (value, concatKeyName) => {
+        let heap = [];
+
+        if (typeof value === 'object' && value !== null) {
+            for (let [, {[concatKeyName]: v }] of Object.entries(value)) {
+                heap.push(v != undefined && v);
+            }
+        }
+
+
+        return arrayToString(heap);
+    }
 };

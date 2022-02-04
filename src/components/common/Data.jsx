@@ -14,7 +14,10 @@ export function Data ({ title, value }) {
 
 Data.propTypes = {
     title: PropTypes.string,
-    value: PropTypes.string
+    value: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.bool,
+    ])
 };
 
 export default Data;

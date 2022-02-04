@@ -1,5 +1,5 @@
-import Search from '@/assets/search.svg';
-import Moon from '@/assets/moon.svg';
+import Search from '@/assets/search.svg?component';
+import Moon from '@/assets/moon.svg?component';
 
 export const Icon = {
     Search,
