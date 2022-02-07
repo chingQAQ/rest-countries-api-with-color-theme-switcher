@@ -23,7 +23,7 @@ export function Country ({
                     loading="lazy"
                 />
             </div>
-            <div className="p-4 pb-8 space-y-1 box-border">
+            <div className="p-4 pb-8 space-y-1 box-border text-xs">
                 <p className="text-dark-blue dark:text-white font-bold text-sm">{name}</p>
                 {
                     Object.entries({

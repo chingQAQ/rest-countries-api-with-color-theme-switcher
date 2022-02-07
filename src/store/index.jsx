@@ -32,12 +32,12 @@ export function useStore() {
     }, [isLoading, isSuccess]);
     
     return {
+        data: store,
         getDataState: () => ({
             isLoading,
             isSuccess,
             isError,   
         }),
-        getAllCountriesData: () => store,
         getCountryByName: async (name) => {
 
             const memoryCountry = store.find(i => i.name === name);

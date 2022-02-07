@@ -13,6 +13,6 @@
 
 @layer utilities {
     .btn {
-        @apply bg-white dark:bg-dark-blue hover:bg-slate-300 dark:hover:bg-very-dark-blue;
+        @apply bg-white dark:bg-dark-blue;
     }
 }

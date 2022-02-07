@@ -12,11 +12,9 @@ export function Home() {
 
     const [filter, setFilter] = useState('');
 
-    const { getDataState, getAllCountriesData } = useStore();
+    const { getDataState, data } = useStore();
 
     const { isLoading, isError } = getDataState();
-
-    const data = getAllCountriesData();
 
     const countries = useMemo(() => 
         data
