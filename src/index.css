@@ -10,9 +10,3 @@
         @apply text-very-dark-blue dark:text-white;
     }
 }
-
-@layer utilities {
-    .btn {
-        @apply bg-white dark:bg-dark-blue;
-    }
-}

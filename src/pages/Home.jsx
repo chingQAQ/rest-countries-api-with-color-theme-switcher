@@ -8,9 +8,9 @@ const REGION = ['All', 'Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
 
 export function Home() {
 
-    const [search, setSearch] = useState('');
+    const [ search, setSearch ] = useState('');
 
-    const [filter, setFilter] = useState('');
+    const [ filter, setFilter ] = useState('');
 
     const { getDataState, data } = useStore();
 
@@ -39,7 +39,7 @@ export function Home() {
             { isError && <div> Error: { data } </div> }
             {
                 <div className="md:max-h-[65vh] md:overflow-auto mt-10">
-                    <ul className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-1 pb-10">
+                    <ul className="grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 px-1 pb-10">
                         {
                             countries.map((country, idx) => (
                                 <Link key={nanoid(idx)} to={`/detail/${encodeURI(country.name)}`}>

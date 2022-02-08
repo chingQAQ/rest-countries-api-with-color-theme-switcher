@@ -4,8 +4,8 @@ module.exports = {
     theme: {
         screens: {
             sm: '320px',
-            md: '600px',
-            lg: '1024px'
+            md: '768px',
+            lg: '1280px'
         },
         container: {
             padding: {

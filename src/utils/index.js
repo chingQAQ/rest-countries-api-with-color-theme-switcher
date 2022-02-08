@@ -12,7 +12,7 @@ export const Format = {
     object: (value, concatKeyName) => {
         let heap = [];
 
-        if (typeof value === 'object' && value !== null) {
+        if (typeof value === 'object' && value != null) {
             for (let [, {[concatKeyName]: v }] of Object.entries(value)) {
                 heap.push(v != undefined && v);
             }
