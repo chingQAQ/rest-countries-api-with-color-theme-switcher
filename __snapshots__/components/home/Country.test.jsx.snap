@@ -1,0 +1,131 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Country 1`] = `
+<li
+  className=""
+>
+  <div
+    className="w-full aspect-[5/3] overflow-hidden"
+  >
+    <img
+      alt="Colombia's flag"
+      className="w-full h-full object-cover"
+      loading="lazy"
+      src="https://restcountries.com/data/png/col.png"
+    />
+  </div>
+  <div
+    className="p-4 pb-8 space-y-1 box-border text-xs"
+  >
+    <p
+      className="text-dark-blue dark:text-white font-bold text-sm"
+    >
+      Colombia
+    </p>
+    <div
+      className="text-dark-blue dark:text-slate-300"
+    >
+      <span>
+        Population
+         : 
+      </span>
+      <span
+        className="text-dark-blue/[0.7] dark:text-slate-400"
+      >
+        48,759,958
+      </span>
+    </div>
+    <div
+      className="text-dark-blue dark:text-slate-300"
+    >
+      <span>
+        Region
+         : 
+      </span>
+      <span
+        className="text-dark-blue/[0.7] dark:text-slate-400"
+      >
+        South America
+      </span>
+    </div>
+    <div
+      className="text-dark-blue dark:text-slate-300"
+    >
+      <span>
+        Capital
+         : 
+      </span>
+      <span
+        className="text-dark-blue/[0.7] dark:text-slate-400"
+      >
+        Bogotá
+      </span>
+    </div>
+  </div>
+</li>
+`;
+
+exports[`Country 2`] = `
+<li
+  className=""
+>
+  <div
+    className="w-full aspect-[5/3] overflow-hidden"
+  >
+    <img
+      alt="Colombia's flag"
+      className="w-full h-full object-cover"
+      loading="lazy"
+      src="https://restcountries.com/data/png/col.png"
+    />
+  </div>
+  <div
+    className="p-4 pb-8 space-y-1 box-border text-xs"
+  >
+    <p
+      className="text-dark-blue dark:text-white font-bold text-sm"
+    >
+      Colombia
+    </p>
+    <div
+      className="text-dark-blue dark:text-slate-300"
+    >
+      <span>
+        Population
+         : 
+      </span>
+      <span
+        className="text-dark-blue/[0.7] dark:text-slate-400"
+      >
+        48,759,958
+      </span>
+    </div>
+    <div
+      className="text-dark-blue dark:text-slate-300"
+    >
+      <span>
+        Region
+         : 
+      </span>
+      <span
+        className="text-dark-blue/[0.7] dark:text-slate-400"
+      >
+        South America
+      </span>
+    </div>
+    <div
+      className="text-dark-blue dark:text-slate-300"
+    >
+      <span>
+        Capital
+         : 
+      </span>
+      <span
+        className="text-dark-blue/[0.7] dark:text-slate-400"
+      >
+        Bogotá
+      </span>
+    </div>
+  </div>
+</li>
+`;
