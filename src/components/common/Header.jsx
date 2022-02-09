@@ -13,9 +13,9 @@ function ThemeToggle () {
             className="text-very-dark-blue dark:text-white"
             onClick={changeTheme}
         >
-            <div className="w-6 mr-2 inline-block align-bottom">
+            <span className="w-6 mr-2 inline-block align-bottom">
                 <Icon.Moon />
-            </div>
+            </span>
             Dark Mode
         </button>
     );

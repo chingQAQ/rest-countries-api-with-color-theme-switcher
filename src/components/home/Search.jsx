@@ -7,9 +7,9 @@ export function Search ({ className, onChange }) {
     return (
         <div className={clsx(className)}>
             <label htmlFor="userSearchCountry" className="flex items-center text-sm">
-                <div className="grow-0 shrink-0 basis-6 mr-4">
+                <span className="grow-0 shrink-0 basis-6 mr-4">
                     <Icon.Search />
-                </div>
+                </span>
                 <input
                     type="text"
                     id="userSearchCountry"

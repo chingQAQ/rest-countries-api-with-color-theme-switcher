@@ -14,7 +14,7 @@ export function Country ({
     className
 }) {
     return (
-        <li className={clsx(className)}>
+        <div className={clsx(className)}>
             <div className="w-full aspect-[5/3] overflow-hidden">
                 <img
                     className="w-full h-full object-cover"
@@ -35,7 +35,7 @@ export function Country ({
                     ))
                 }
             </div>
-        </li>
+        </div>
     );
 }
 

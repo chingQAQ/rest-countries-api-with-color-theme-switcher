@@ -42,11 +42,13 @@ export function Home() {
                     <ul className="grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 px-1 pb-10">
                         {
                             countries.map((country, idx) => (
-                                <Link key={nanoid(idx)} to={`/detail/${encodeURI(country.name)}`}>
-                                    <Card>
-                                        <Country {...country} />
-                                    </Card>
-                                </Link>
+                                <li key={nanoid(idx)}>
+                                    <Link to={`/detail/${encodeURI(country.name)}`}>
+                                        <Card>
+                                            <Country {...country} />
+                                        </Card>
+                                    </Link>
+                                </li>
                             ))
                         }
                     </ul>
