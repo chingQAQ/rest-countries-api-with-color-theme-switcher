@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Country from './Country';
+import Country from '../Country';
 // import Card from '@/component/common/Card';
 // import { Format } from '@/utils';
 

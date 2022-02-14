@@ -1,8 +1,17 @@
-export const upperCaseChar = (char) => char.toUpperCase();
+export const upperCaseChar = (char = '') => char.toString().toUpperCase();
 
-export const capitalStr = (string, convert) => string.replace(/^\w/, convert);
+export const capitalStr = (string, convert) => {
+    if (
+        !(string && convert) ||
+        !(convert instanceof Function || typeof convert === "function")
+    ) {
+        return "";
+    }
 
-export const join = sign => value => value.join(`${sign}`);
+    return string.replace(/^\w/, convert);
+};
+
+export const join = sign => value => value.join(`${sign.toString()}`);
 
 const format = join(', ');
 
